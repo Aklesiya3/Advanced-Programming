@@ -4,7 +4,7 @@ class Task extends Thread {
             System.out.println(Thread.currentThread().getName() + " - Task count: " + i);
             
             try {
-                Thread.sleep(500); // pause for 0.5 seconds to simulate work
+                Thread.sleep(500); 
             } catch (InterruptedException e) {
                 System.out.println("Thread interrupted!");
             }
@@ -12,15 +12,12 @@ class Task extends Thread {
     }
 
     public static void main(String[] args) {
-        // Create two thread objects
         Task t1 = new Task();
         Task t2 = new Task();
 
-        // Set custom names (optional)
         t1.setName("Worker-1");
         t2.setName("Worker-2");
 
-        // Start both threads
         t1.start();
         t2.start();
     }
